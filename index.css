@@ -1,130 +1,153 @@
-/* 共通設定 */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-}
-
 /* ヘッダー */
 header {
+    background-color: #b0e57c; /* 若葉色 */
+    width: 100%;
+    padding: 10px 0;
+}
+
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #A8E6A1; /* 若葉色 */
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.title {
+    font-size: 24px;
+    color: #4caf50; /* 若葉色 */
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+/* ハンバーガーメニュー */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.hamburger-icon::before,
+.hamburger-icon::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    transition: all 0.3s;
+}
+
+.hamburger-icon::before {
+    top: -8px;
+}
+
+.hamburger-icon::after {
+    top: 8px;
+}
+
+.hamburger-menu.active .hamburger-icon {
+    background-color: transparent;
+}
+
+.hamburger-menu.active .hamburger-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.hamburger-menu.active .hamburger-icon::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+/* ハンバーガーメニューのサイドメニュー */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.3);
+    transition: right 0.5s ease;
     padding: 20px;
 }
 
-.title a {
+.menu-overlay.active {
+    right: 0;
+}
+
+.menu-overlay ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-overlay li {
+    margin: 20px 0;
+}
+
+.menu-overlay a {
     text-decoration: none;
-    color: #4CAF50; /* 若葉色 */
-    font-size: 24px;
-    font-weight: bold;
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #4CAF50; /* 若葉色 */
+    color: #333;
     font-size: 18px;
-}
-
-.hamburger {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.hamburger .bar {
-    width: 30px;
-    height: 3px;
-    background-color: #4CAF50;
-}
-
-/* メインコンテンツ */
-main {
-    padding: 40px;
-    background-color: white;
-    text-align: center;
 }
 
 /* フッター */
 footer {
-    background-color: #7B9A4A; /* 少し濃い若葉色 */
-    padding: 20px;
+    background-color: #8bbf5f; /* 少し濃い若葉色 */
     text-align: center;
-    color: white;
+    padding: 10px 0;
 }
 
-/* メディアクエリ: 960px未満の画面サイズに対応 */
+footer p {
+    margin: 0;
+}
+
+/* メインコンテンツ */
+main {
+    background-color: #fff;
+    text-align: center;
+    padding: 50px 15px;
+}
+
 @media (max-width: 960px) {
-    nav {
+    .menu {
         display: none;
     }
 
-    .hamburger {
-        display: flex;
+    .hamburger-menu {
+        display: block;
     }
 
-    .menu {
-        display: none; /* メニューは初期状態では非表示 */
+    .menu-overlay {
         position: fixed;
         top: 0;
-        right: -250px; /* 初期位置は画面外 */
-        background-color: rgba(255, 255, 255, 0.9);
+        right: -100%;
         width: 250px;
+        background-color: #fff;
         height: 100%;
-        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
-        padding-top: 50px;
-        transition: right 0.5s ease-in-out; /* メニューのスライドアニメーション */
+        box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.3);
+        transition: right 0.5s ease;
     }
 
-    .menu.active {
-        display: block;
-        right: 0; /* メニューが開くときに画面内にスライドイン */
-    }
-
-    .menu ul {
-        display: block;
-        text-align: right;
-        padding-right: 20px;
-    }
-
-    .menu ul li {
-        margin-bottom: 30px;
-    }
-
-    .menu ul li a {
-        font-size: 20px;
-        color: #4CAF50;
-    }
-
-    .menu ul li a:hover {
-        color: #8FBC8F;
-    }
-
-    /* 閉じるボタン */
-    .close-btn {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        font-size: 30px;
-        color: #4CAF50;
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 10;
+    .menu-overlay.active {
+        right: 0;
     }
 }
