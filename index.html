@@ -4,38 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to My Cafe</title>
-    <link rel="stylesheet" href="index.css"> <!-- CSSファイルのリンク -->
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <!-- ヘッダー -->
     <header>
-        <h1>Welcome to My Cafe!</h1>
-        <!-- ハンバーガーメニュー -->
-        <div class="menu-toggle" id="menu-toggle">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
+        <a href="index.html" class="title">Welcome to My Cafe</a>
+        <nav>
+            <ul>
+                <li><a href="#">Diary</a></li>
+                <li><a href="#">Midi</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
     </header>
 
-    <!-- メニューオーバーレイ -->
-    <div id="menu-overlay" class="menu-overlay"></div>
-
-    <!-- ナビゲーションメニュー -->
-    <nav id="navbar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="diary.html">Diary</a></li>
-        </ul>
-    </nav>
-
+    <!-- メインコンテンツ -->
     <main>
         <p>This is a simple homepage for my cafe. Stay tuned for more!</p>
     </main>
 
+    <!-- フッター -->
     <footer>
-        <p>&copy; 2025 My Cafe</p>
+        <p>&copy; 2025 Liqrase</p>
     </footer>
 
-    <script src="index.js"></script> <!-- JSファイルのリンク -->
+    <script src="index.js"></script>
 </body>
 </html>
