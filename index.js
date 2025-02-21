@@ -1,4 +1,4 @@
-// script.js
+// index.js
 
 // ハンバーガーメニューをクリックしたときにナビゲーションメニューを表示/非表示
 document.getElementById('menu-toggle').addEventListener('click', function() {
