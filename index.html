@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to My Cafe</title>
-    <link rel="stylesheet" href="index.css"> <!-- CSSファイルのリンク -->
+    <link rel="stylesheet" href="style.css"> <!-- CSSファイルのリンク -->
 </head>
 <body>
     <header>
@@ -15,13 +15,18 @@
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
-        <nav id="navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="diary.html">Diary</a></li>
-            </ul>
-        </nav>
     </header>
+
+    <!-- メニューオーバーレイ -->
+    <div id="menu-overlay" class="menu-overlay"></div>
+
+    <!-- ナビゲーションメニュー -->
+    <nav id="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="diary.html">Diary</a></li>
+        </ul>
+    </nav>
 
     <main>
         <p>This is a simple homepage for my cafe. Stay tuned for more!</p>
@@ -31,6 +36,6 @@
         <p>&copy; 2025 My Cafe</p>
     </footer>
 
-    <script src="index.js"></script> <!-- JSファイルのリンク -->
+    <script src="script.js"></script> <!-- JSファイルのリンク -->
 </body>
 </html>
