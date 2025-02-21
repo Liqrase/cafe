@@ -1,6 +1,4 @@
-/* index.css */
-
-/* 基本的なレイアウト */
+/* 基本のスタイル */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -23,6 +21,7 @@ header {
     width: 30px;
     height: 20px;
     justify-content: space-between;
+    z-index: 2; /* ハンバーガーメニューを他の要素より前面に表示 */
 }
 
 .bar {
@@ -72,7 +71,7 @@ nav ul li a {
 
 /* メニューが開いた時のスタイル */
 nav.open ul {
-    transform: translateX(0); /* メニューが右からスライドイン */
+    transform: translateX(-250px); /* メニューが右からスライドイン */
     right: 0; /* メニューの位置を左に調整して表示 */
 }
 
@@ -81,6 +80,7 @@ nav.open ul {
     visibility: visible; /* 背景が表示される */
 }
 
+/* モバイル用のレスポンシブ */
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex;
@@ -89,7 +89,50 @@ nav.open ul {
         right: 20px;
     }
 
+    /* メニューが画面に収まるように調整 */
+    nav ul {
+        right: -250px; /* メニューが画面外に隠れる */
+        width: 70%; /* モバイルサイズのメニュー */
+    }
+
     nav.open ul {
-        display: block; /* メニューが表示される */
+        transform: translateX(0); /* メニューが右からスライドイン */
+    }
+
+    /* メニューオーバーレイが表示される */
+    .menu-overlay.show {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* タブレットやPCサイズ */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none; /* PC画面ではハンバーガーメニューを非表示 */
+    }
+
+    /* メニューが左側に固定される */
+    nav ul {
+        position: static;
+        display: block;
+        width: auto;
+        background-color: transparent;
+        height: auto;
+        transition: none;
+    }
+
+    nav ul li {
+        display: inline-block;
+        padding: 10px 20px;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+
+    /* メニューオーバーレイは非表示 */
+    .menu-overlay {
+        display: none;
     }
 }
