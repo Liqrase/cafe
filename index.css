@@ -21,6 +21,7 @@ header {
 }
 
 .menu {
+    font-family: inherit;
     display: flex;
     gap: 20px;
 }
