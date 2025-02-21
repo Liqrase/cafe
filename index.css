@@ -1,6 +1,6 @@
 /* ヘッダー */
 header {
-    background-color: #b0e57c; /* 若葉色 */
+    background-color: #FFFFFF; /* 若葉色 */
     width: 100%;
     padding: 10px 0;
 }
@@ -16,7 +16,7 @@ header {
 
 .title {
     font-size: 24px;
-    color: #FFFFFF; 
+    color: #b0e57c; 
     text-decoration: none;
 }
 
