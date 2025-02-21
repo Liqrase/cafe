@@ -1,130 +1,102 @@
-/* 基本の設定 */
+/* 基本スタイル */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: white; /* ページ全体の背景色 */
+  font-family: Arial, sans-serif;
+  background-color: white;
 }
 
 header {
-    background-color: #d0e8b7; /* 若葉色 */
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
 }
 
-.title {
-    color: #4caf50; /* 若葉色 */
-    font-size: 24px;
-    text-decoration: none;
+.header-title a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #8BC34A; /* 若葉色 */
+  text-decoration: none;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
+.nav-menu ul {
+  display: flex;
+  list-style: none;
 }
 
-nav ul li {
-    margin-left: 20px;
+.nav-menu ul li {
+  margin-left: 20px;
 }
 
-nav ul li a {
-    color: #333;
-    text-decoration: none;
-    font-size: 18px;
+.nav-menu ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
 }
 
-/* ハンバーガーメニュー */
-.menu-toggle {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    width: 30px;
-    height: 20px;
-    justify-content: space-between;
-    z-index: 2; /* ハンバーガーメニューを他の要素より前面に表示 */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
 }
 
-.bar {
-    height: 4px;
-    background-color: #333;
-    width: 100%;
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 4px 0;
 }
 
-/* メニューオーバーレイ */
-.menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 背景を暗く */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+/* メインコンテンツ */
+main {
+  padding: 40px;
+  text-align: center;
 }
 
-/* メニューのスタイル */
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    position: fixed;
-    top: 0;
-    right: -250px; /* メニューは最初は画面外 */
-    width: 250px;
-    height: 100vh;
-    background-color: #d0e8b7; /* 若葉色 */
-    transition: right 0.3s ease;
-}
-
-nav ul li {
-    display: block;
-    padding: 15px;
-    text-align: center;
-}
-
-nav ul li a {
-    color: #333;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-/* メニューが開いた時 */
-nav.open ul {
-    right: 0; /* メニューが画面にスライドイン */
-}
-
-.menu-overlay.show {
-    opacity: 1;
-    visibility: visible; /* 背景が表示される */
-}
-
-/* レスポンシブ対応 */
-@media (max-width: 768px) {
-    /* PC画面ではハンバーガーメニューを非表示 */
-    nav ul {
-        display: none; /* メニューを非表示 */
-    }
-
-    nav.open ul {
-        display: block; /* メニューが表示される */
-    }
-
-    /* ハンバーガーメニューを表示 */
-    .menu-toggle {
-        display: flex;
-    }
+.content p {
+  font-size: 18px;
 }
 
 /* フッター */
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
+  background-color: #8BC34A; /* 少し濃い若葉色 */
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* ハンバーガーメニュー（モバイル時） */
+@media (max-width: 768px) {
+  .nav-menu ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: white;
     padding: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu ul li {
+    margin: 10px 0;
+  }
+
+  .nav-menu ul li a {
+    color: black;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu.active ul {
+    display: flex;
+  }
 }
