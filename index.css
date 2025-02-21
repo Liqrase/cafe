@@ -1,4 +1,4 @@
-/* 全体の設定 */
+/* 基本の設定 */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -55,28 +55,64 @@ nav ul li a {
     width: 100%;
 }
 
+/* メニューオーバーレイ */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 背景を暗く */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* メニューのスタイル */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    right: -250px; /* メニューは最初は画面外 */
+    width: 250px;
+    height: 100vh;
+    background-color: #d0e8b7; /* 若葉色 */
+    transition: right 0.3s ease;
+}
+
+nav ul li {
+    display: block;
+    padding: 15px;
+    text-align: center;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* メニューが開いた時 */
+nav.open ul {
+    right: 0; /* メニューが画面にスライドイン */
+}
+
+.menu-overlay.show {
+    opacity: 1;
+    visibility: visible; /* 背景が表示される */
+}
+
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
+    /* PC画面ではハンバーガーメニューを非表示 */
     nav ul {
         display: none; /* メニューを非表示 */
-        position: absolute;
-        top: 50px;
-        right: 0;
-        background-color: #d0e8b7; /* 若葉色 */
-        width: 200px;
-        height: calc(100vh - 50px);
-        flex-direction: column;
-        padding-top: 20px;
     }
 
     nav.open ul {
-        display: flex; /* メニューが表示される */
-    }
-
-    nav ul li {
-        text-align: center;
-        padding: 15px;
-        width: 100%;
+        display: block; /* メニューが表示される */
     }
 
     /* ハンバーガーメニューを表示 */
