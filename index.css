@@ -135,9 +135,21 @@ main {
 
     .menu {
         display: flex;
-        gap: 20px; /* メニューアイテム間のスペース */
+        align-items: center;
     }
 
+     .menu ul {
+         display: flex;
+         list-style: none;
+         padding: 0;
+         margin: 0;
+         gap: 20px; /* 間隔を調整 */
+    }
+
+     .menu li {
+         display: inline-block;
+    }
+    
     .menu a {
         font-size: 16px;
         text-decoration: none;
