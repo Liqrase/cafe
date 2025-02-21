@@ -15,24 +15,34 @@ header {
     position: relative;
 }
 
-/* メニューのスタイル */
+/* ハンバーガーメニューのスタイル */
+.menu-toggle {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    width: 30px;
+    height: 20px;
+    justify-content: space-between;
+}
+
+.bar {
+    height: 4px;
+    background-color: #fff;
+    width: 100%;
+}
+
+/* ナビゲーションメニュー */
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     position: absolute;
-    top: 50px; /* ヘッダーの下にメニューを配置 */
-    left: 0;
-    width: 100%;
+    top: 0;
+    right: -250px; /* メニューが画面外に隠れる位置 */
+    width: 250px;
+    height: 100vh;
     background-color: #333;
-    transform: translateY(-100%); /* メニューを画面外に配置 */
-    opacity: 0; /* 最初は透明 */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* ぬるっと出てくるアニメーション */
-}
-
-nav.open ul {
-    transform: translateY(0); /* メニューを元の位置に表示 */
-    opacity: 1; /* メニューが完全に表示される */
+    transition: transform 0.3s ease, right 0.3s ease;
 }
 
 nav ul li {
@@ -47,28 +57,31 @@ nav ul li a {
     font-size: 18px;
 }
 
-/* ハンバーガーメニューのスタイル */
-.menu-toggle {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    width: 30px;
-    height: 20px;
-    justify-content: space-between;
-}
-
-.bar {
-    height: 4px;
-    background-color: #fff;
+/* メニューオーバーレイ */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 背景を暗く */
+    opacity: 0;
+    visibility: hidden; /* 最初は非表示 */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* ハンバーガーメニューの表示 */
-@media (max-width: 768px) {
-    nav ul {
-        display: block;
-    }
+/* メニューが開いた時のスタイル */
+nav.open ul {
+    transform: translateX(-250px); /* メニューが右からスライドイン */
+    right: 0; /* メニューの位置を左に調整して表示 */
+}
 
+.menu-overlay.show {
+    opacity: 1;
+    visibility: visible; /* 背景が表示される */
+}
+
+@media (max-width: 768px) {
     .menu-toggle {
         display: flex;
         position: absolute;
