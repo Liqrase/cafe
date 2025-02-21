@@ -19,11 +19,26 @@ header {
 nav ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 50px; /* ヘッダーの下にメニューを配置 */
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    transform: translateY(-100%); /* メニューを画面外に配置 */
+    opacity: 0; /* 最初は透明 */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* ぬるっと出てくるアニメーション */
+}
+
+nav.open ul {
+    transform: translateY(0); /* メニューを元の位置に表示 */
+    opacity: 1; /* メニューが完全に表示される */
 }
 
 nav ul li {
-    display: inline-block;
-    margin-right: 20px;
+    display: block;
+    padding: 10px 0;
+    text-align: center;
 }
 
 nav ul li a {
@@ -32,6 +47,7 @@ nav ul li a {
     font-size: 18px;
 }
 
+/* ハンバーガーメニューのスタイル */
 .menu-toggle {
     display: none;
     cursor: pointer;
@@ -50,19 +66,7 @@ nav ul li a {
 /* ハンバーガーメニューの表示 */
 @media (max-width: 768px) {
     nav ul {
-        display: none;
-        width: 100%;
-        text-align: center;
-        background-color: #333;
-        position: absolute;
-        top: 50px;
-        left: 0;
-    }
-
-    nav ul li {
         display: block;
-        margin: 0;
-        padding: 10px 0;
     }
 
     .menu-toggle {
@@ -73,6 +77,6 @@ nav ul li a {
     }
 
     nav.open ul {
-        display: block;
+        display: block; /* メニューが表示される */
     }
 }
