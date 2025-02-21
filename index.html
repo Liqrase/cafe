@@ -1,41 +1,39 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Cafe</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to My Cafe</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <!-- ヘッダー -->
-    <header>
-        <a href="index.html" class="title">Welcome to My Cafe</a>
-        <nav>
-            <ul>
-                <li><a href="#">Diary</a></li>
-                <li><a href="#">Midi</a></li>
-            </ul>
-            <div class="menu-toggle" id="menu-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
+  <header>
+    <div class="header-title">
+      <a href="index.html">Welcome to My Cafe</a>
+    </div>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="diary.html">Diary</a></li>
+        <li><a href="midi.html">Midi</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger" id="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </header>
 
-    <!-- メインコンテンツ -->
-    <main>
-        <p>This is a simple homepage for my cafe. Stay tuned for more!</p>
-    </main>
+  <main>
+    <section class="content">
+      <p>This is a simple homepage for my cafe. Stay tuned for more!</p>
+    </section>
+  </main>
 
-    <!-- フッター -->
-    <footer>
-        <p>&copy; 2025 Liqrase</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Liqrase</p>
+  </footer>
 
-    <!-- メニューオーバーレイ -->
-    <div id="menu-overlay" class="menu-overlay"></div>
-
-    <script src="index.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
