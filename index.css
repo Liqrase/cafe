@@ -72,7 +72,7 @@ nav ul li a {
 
 /* メニューが開いた時のスタイル */
 nav.open ul {
-    transform: translateX(-250px); /* メニューが右からスライドイン */
+    transform: translateX(0); /* メニューが右からスライドイン */
     right: 0; /* メニューの位置を左に調整して表示 */
 }
 
