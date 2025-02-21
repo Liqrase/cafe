@@ -1,0 +1,78 @@
+/* style.css */
+
+/* 基本的なレイアウト */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    position: relative;
+}
+
+/* メニューのスタイル */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    width: 30px;
+    height: 20px;
+    justify-content: space-between;
+}
+
+.bar {
+    height: 4px;
+    background-color: #fff;
+    width: 100%;
+}
+
+/* ハンバーガーメニューの表示 */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        width: 100%;
+        text-align: center;
+        background-color: #333;
+        position: absolute;
+        top: 50px;
+        left: 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+
+    nav.open ul {
+        display: block;
+    }
+}
