@@ -1,107 +1,192 @@
-/* 基本スタイル */
+/* ベースのスタイル */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
 }
 
+/* ヘッダー */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: white;
+    background-color: #A8D5BA; /* 若葉色 */
+    padding: 10px 20px;
+    position: relative;
 }
 
-.header-title a {
-  font-size: 24px;
-  font-weight: bold;
-  color: #8BC34A; /* 若葉色 */
-  text-decoration: none;
+/* ヘッダーのコンテナ */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.nav-menu ul {
-  display: flex;
-  list-style: none;
+.header-left {
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.nav-menu ul li {
-  margin-left: 20px;
+.header-left .logo {
+    text-decoration: none;
+    color: #4CAF50; /* 若葉色 */
 }
 
-.nav-menu ul li a {
-  text-decoration: none;
-  color: black;
-  font-size: 18px;
+.header-right nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.header-right nav ul li {
+    margin: 0 10px;
+}
+
+.header-right nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+/* メニュートグル（ハンバーガーメニュー） */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
 }
 
 .hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  z-index: 9999; /* メニューより前面に表示 */
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
 }
 
-.hamburger .bar {
-  width: 30px;
-  height: 4px;
-  background-color: #333;
-  margin: 5px;
-  border-radius: 5px;
+.hamburger::before, .hamburger::after {
+    content: '';
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hamburger::before {
+    top: -10px;
+}
+
+.hamburger::after {
+    top: 10px;
+}
+
+.sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #A8D5BA;
+    box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    padding-top: 50px;
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    padding: 10px 20px;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.sidebar.active + .overlay {
+    display: block;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+
+/* レスポンシブデザイン */
+@media screen and (max-width: 960px) {
+    .header-container {
+        justify-content: space-between;
+    }
+
+    .header-right {
+        display: none;
+    }
+
+    .header-left {
+        flex: 1;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .header-container .header-left {
+        flex: 1;
+    }
+
+    .sidebar.active + .overlay {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-left {
+        margin-bottom: 10px;
+    }
+
+    .menu-toggle {
+        margin-top: 10px;
+    }
+
+    .header-right {
+        display: none;
+    }
 }
 
 /* メインコンテンツ */
 main {
-  padding: 40px;
-  text-align: center;
-}
-
-.content p {
-  font-size: 18px;
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
 }
 
 /* フッター */
 footer {
-  background-color: #8BC34A; /* 少し濃い若葉色 */
-  padding: 10px;
-  text-align: center;
-  color: white;
-}
-
-/* ハンバーガーメニュー（モバイル時） */
-@media (max-width: 768px) {
-  .nav-menu ul {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .nav-menu.active ul {
-    transform: translateX(0);
-  }
-
-  .nav-menu ul li {
-    margin: 10px 0;
-  }
-
-  .nav-menu ul li a {
-    color: black;
-    font-size: 18px;
-  }
-
-  .hamburger {
-    display: flex;
-  }
+    background-color: #88CBB9; /* 少し濃い若葉色 */
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
 }
