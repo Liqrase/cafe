@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python練習</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        pre {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Python練習ページ</h1>
+    <p>Pythonで作ったものを雑に載せる場所です。</p>
+    <p>このページはChatGPTに作って貰っています。</p>
+    
+    <h2>基本の出力</h2>
+    <p>Pythonでは <code>print()</code> を使って画面に出力できます。</p>
+    <pre>
+print("Hello, World!")
+    </pre>
+    
+    <h2>変数とデータ型</h2>
+    <p>Pythonの基本的なデータ型には、整数、浮動小数点数、文字列などがあります。</p>
+    <pre>
+x = 10
+pi = 3.14
+message = "こんにちは、Python!"
+print(x, pi, message)
+    </pre>
+    
+    <h2>条件分岐</h2>
+    <p><code>if</code> 文を使うことで条件に応じた処理ができます。</p>
+    <pre>
+number = 7
+if number % 2 == 0:
+    print("偶数です")
+else:
+    print("奇数です")
+    </pre>
+    
+    <h2>ループ処理</h2>
+    <p><code>for</code> や <code>while</code> を使って繰り返し処理ができます。</p>
+    <pre>
+for i in range(5):
+    print("ループ", i)
+    </pre>
+    
+    <h2>戻る</h2>
+    <p><a href="index.html">トップページへ戻る</a></p>
+</body>
+</html>
