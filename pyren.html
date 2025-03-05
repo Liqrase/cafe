@@ -27,39 +27,64 @@
     <p>Pythonで作ったものを雑に載せる場所です。</p>
     <p>このページはChatGPTに作って貰っています。</p>
     
-    <h2>基本の出力</h2>
-    <p>Pythonでは <code>print()</code> を使って画面に出力できます。</p>
+    <h2><a href="https://app-app-nrcrvhqjzggcsn9qj9yqtt.streamlit.app/">じゃんけんグリコ</a> - 2025/03/25</h2>
+    <p>Streamlitに対応させる前のコードは下記のとおりです。</p>
     <pre>
-print("Hello, World!")
-    </pre>
-    
-    <h2>変数とデータ型</h2>
-    <p>Pythonの基本的なデータ型には、整数、浮動小数点数、文字列などがあります。</p>
-    <pre>
-x = 10
-pi = 3.14
-message = "こんにちは、Python!"
-print(x, pi, message)
-    </pre>
-    
-    <h2>条件分岐</h2>
-    <p><code>if</code> 文を使うことで条件に応じた処理ができます。</p>
-    <pre>
-number = 7
-if number % 2 == 0:
-    print("偶数です")
+import random
+
+def hantei(hand):
+    if hand == "グー":
+        return 3
+    elif hand == "チョキ":
+        return 5
+    else:
+        return 6
+
+def janken(p_hand,cp_hand):
+    if (p_hand == "グー" and cp_hand == "チョキ") or (p_hand == "チョキ" and cp_hand == "パー") or (p_hand == "パー" and cp_hand == "グー"):
+        print("あなたの勝ち！")
+        return 1
+    elif (p_hand == "グー" and cp_hand == "パー") or (p_hand == "チョキ" and cp_hand == "グー") or (p_hand == "パー" and cp_hand == "チョキ"):
+        print("CPUの勝ち！")
+        return 2
+    else:
+        return 3
+
+p_walk = 0
+cp_walk = 0
+weaporn = ["グー", "チョキ", "パー"]
+count = 1
+
+print("  ！！じゃんけんグリコを始めます！！")
+while p_walk < 20 and cp_walk < 20:
+    while True:
+        p_hand = input(f"\n{count}戦目。出したい手を「グー」「チョキ」「パー」の3択で入力してください。 >>")
+        if p_hand  in ["グー","チョキ","パー"]:
+            break
+        else:
+            print("入力が正しくありません。「グー」「チョキ」「パー」の中から選んで入力してください。")
+    cp_hand = random.choice(weaporn)
+    print("じゃん、けん、ぽん！")
+    print(f"あなたは{p_hand}を出し、CPUは{cp_hand}を出した！")
+    syouhai = janken(p_hand,cp_hand)
+    if syouhai == 1:
+        print(f"あなたは{hantei(p_hand)}マス進む。")
+        p_walk += hantei(p_hand)
+        count += 1
+    elif syouhai == 2:
+        print(f"CPUは{hantei(cp_hand)}マス進む。")
+        cp_walk += hantei(cp_hand)
+        count += 1
+    else:
+        print("あいこ。やり直し！")
+    print(f"現在地は、あなた:{p_walk}マス目、CPU:{cp_walk}マス目です。")
+
+if p_walk >= 20:
+    print("\nあなたの勝ち！")
 else:
-    print("奇数です")
+    print("\nCPUの勝ち！")
     </pre>
     
-    <h2>ループ処理</h2>
-    <p><code>for</code> や <code>while</code> を使って繰り返し処理ができます。</p>
-    <pre>
-for i in range(5):
-    print("ループ", i)
-    </pre>
-    
-    <h2>戻る</h2>
     <p><a href="index.html">トップページへ戻る</a></p>
 </body>
 </html>
