@@ -1,5 +1,4 @@
 [
     { "text": "Diary", "link": "diary.html" },
-    { "text": "Python", "link": "pyren.html" },
-    { "text": "New Page", "link": "newpage.html" }
+    { "text": "Python", "link": "pyren.html" }
 ]
