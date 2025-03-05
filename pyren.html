@@ -25,7 +25,8 @@
             <pre class="code-content">
 import random
 
-def hantei(hand):
+# 歩数割り出し
+def step(hand):
     if hand == "グー":
         return 3
     elif hand == "チョキ":
@@ -33,6 +34,7 @@ def hantei(hand):
     else:
         return 6
 
+# じゃんけん
 def janken(p_hand,cp_hand):
     if (p_hand == "グー" and cp_hand == "チョキ") or 
         (p_hand == "チョキ" and cp_hand == "パー") or 
@@ -47,11 +49,13 @@ def janken(p_hand,cp_hand):
     else:
         return 3
 
+# 変数、リスト設定
 p_walk = 0
 cp_walk = 0
-weaporn = ["グー", "チョキ", "パー"]
 count = 1
+weaporn = ["グー", "チョキ", "パー"]
 
+#ここから
 print("  ！！じゃんけんグリコを始めます！！")
 while p_walk < 20 and cp_walk < 20:
     while True:
@@ -63,19 +67,19 @@ while p_walk < 20 and cp_walk < 20:
     cp_hand = random.choice(weaporn)
     print("じゃん、けん、ぽん！")
     print(f"あなたは{p_hand}を出し、CPUは{cp_hand}を出した！")
-    syouhai = janken(p_hand,cp_hand)
-    if syouhai == 1:
-        print(f"あなたは{hantei(p_hand)}マス進む。")
-        p_walk += hantei(p_hand)
+    hantei = janken(p_hand,cp_hand)
+    if hantei == 1:
+        print(f"あなたは{step(p_hand)}マス進む。")
+        p_walk += step(p_hand)
         count += 1
-    elif syouhai == 2:
-        print(f"CPUは{hantei(cp_hand)}マス進む。")
-        cp_walk += hantei(cp_hand)
+    elif hantei == 2:
+        print(f"CPUは{step(cp_hand)}マス進む。")
+        cp_walk += step(cp_hand)
         count += 1
     else:
         print("あいこ。やり直し！")
     print(f"現在地は、あなた:{p_walk}マス目、CPU:{cp_walk}マス目です。")
-
+# 最終判定
 if p_walk >= 20:
     print("\nあなたの勝ち！")
 else:
