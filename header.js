@@ -1,4 +1,12 @@
-// ヘッダーのメニューを設定
+// ヘッダーを動的に読み込む
+fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+        document.body.insertAdjacentHTML("afterbegin", data);
+        setupHeaderMenu(); // メニューをセットアップ
+    });
+
+// ヘッダーメニューのセットアップ
 function setupHeaderMenu() {
     const headerMenu = document.getElementById("header-menu");
     const menuOverlay = document.createElement("div");
@@ -51,6 +59,3 @@ function setupHeaderMenu() {
         }
     });
 }
-
-// 🔹 ヘッダーのメニューをセットアップ
-document.addEventListener("DOMContentLoaded", setupHeaderMenu);
