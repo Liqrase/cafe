@@ -1,14 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python 練習</title>
+    <link rel="stylesheet" href="pyren.css">  <!-- pyren.html専用のCSS -->
+</head>
 <body>
+    <!-- 共通のヘッダーを読み込む -->
+    <script src="header.js"></script>
+
     <!-- メインコンテンツ -->
-    <main>  <!-- 追加 -->
+    <main>
         <h1>Python練習ページ</h1>
         <p>Pythonで作ったものを雑に載せる場所です。</p>
         <p>このページはChatGPTに作って貰っています。</p>
-        
+
         <h2><a href="https://app-app-nrcrvhqjzggcsn9qj9yqtt.streamlit.app/">じゃんけんグリコ</a> - 2025/03/25</h2>
         <p>Streamlitに対応させる前のコードは下記のとおりです。</p>
-        
-        <pre>
+
+        <div class="code-container">
+            <button class="toggle-code">クリックでコードを展開</button>
+            <pre class="code-content">
 import random
 
 def hantei(hand):
@@ -62,12 +75,16 @@ if p_walk >= 20:
     print("\nあなたの勝ち！")
 else:
     print("\nCPUの勝ち！")
-        </pre>
+            </pre>
+        </div>
 
         <p><a href="index.html">トップページへ戻る</a></p>
-    </main>  <!-- 追加 -->
-    
-    <!-- 共通のヘッダー・フッター -->
-    <script src="index.js"></script>
+    </main>
+
+    <!-- 共通のフッターを読み込む -->
+    <script src="footer.js"></script>
+
+    <!-- pyren.html専用のJS -->
     <script src="pyren.js"></script>
 </body>
+</html>
