@@ -1,3 +1,14 @@
+main {
+    max-width: 800px; /* メインコンテンツの最大幅を設定 */
+    margin: 0 auto;   /* 左右のマージンを自動にして中央寄せ */
+    padding: 20px;    /* 余白を追加して見やすく */
+    text-align: left; /* 必要ならテキストを左揃え */
+}
+
+h1, h2 {
+    text-align: center; /* タイトルは中央揃え */
+}
+
 .code-block {
     position: relative;
     background-color: #f5f5f5;
