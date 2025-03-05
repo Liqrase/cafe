@@ -9,3 +9,19 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".toggle-code").forEach(button => {
+        button.addEventListener("click", function () {
+            const codeBlock = this.nextElementSibling;
+
+            if (codeBlock.style.maxHeight && codeBlock.style.maxHeight !== "0px") {
+                codeBlock.style.maxHeight = "0";
+                this.textContent = "クリックでコードを展開";
+            } else {
+                codeBlock.style.maxHeight = codeBlock.scrollHeight + "px";
+                this.textContent = "クリックでコードを折りたたむ";
+            }
+        });
+    });
+});
