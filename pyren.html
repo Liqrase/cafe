@@ -32,10 +32,14 @@ def hantei(hand):
         return 6
 
 def janken(p_hand,cp_hand):
-    if (p_hand == "グー" and cp_hand == "チョキ") or (p_hand == "チョキ" and cp_hand == "パー") or (p_hand == "パー" and cp_hand == "グー"):
+    if (p_hand == "グー" and cp_hand == "チョキ") or 
+        (p_hand == "チョキ" and cp_hand == "パー") or 
+        (p_hand == "パー" and cp_hand == "グー"):
         print("あなたの勝ち！")
         return 1
-    elif (p_hand == "グー" and cp_hand == "パー") or (p_hand == "チョキ" and cp_hand == "グー") or (p_hand == "パー" and cp_hand == "チョキ"):
+    elif (p_hand == "グー" and cp_hand == "パー") or 
+        (p_hand == "チョキ" and cp_hand == "グー") or 
+        (p_hand == "パー" and cp_hand == "チョキ"):
         print("CPUの勝ち！")
         return 2
     else:
