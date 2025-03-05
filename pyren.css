@@ -62,7 +62,7 @@ main {
 
 /* 折りたたみ時のコードブロック */
 .code-content {
-    font-size: 12px;
+    font-size: 14px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
