@@ -3,7 +3,7 @@ fetch("header.html")
     .then(response => response.text())
     .then(data => {
         document.body.insertAdjacentHTML("afterbegin", data);
-        setupHeaderMenu(); // メニューをセットアップ
+        setupHeaderMenu(); // ヘッダーが追加された後にメニューをセットアップ！
     });
 
 // ヘッダーメニューのセットアップ
@@ -12,7 +12,10 @@ function setupHeaderMenu() {
     const menuOverlay = document.createElement("div");
     menuOverlay.classList.add("menu-overlay");
 
-    if (!headerMenu) return;
+    if (!headerMenu) {
+        console.error("ヘッダーメニューが見つかりません！");
+        return;
+    }
 
     fetch("menu.json")
         .then(response => response.json())
@@ -39,7 +42,8 @@ function setupHeaderMenu() {
 
             // ハンバーガーメニューに追加
             menuOverlay.appendChild(ulOverlay);
-        });
+        })
+        .catch(error => console.error("メニューの読み込みに失敗しました:", error));
 
     document.body.appendChild(menuOverlay);
 
