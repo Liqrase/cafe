@@ -40,7 +40,7 @@ main {
 
 /* コードブロックの折りたたみ機能 */
 .code-container {
-    margin: 20px 0;
+    margin: 20px 0 0 0;
 }
 
 .toggle-code {
