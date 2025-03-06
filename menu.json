@@ -1,5 +1,4 @@
 [
-    { "text": "Profile", "link": "profile.html" },
     { "text": "Diary", "link": "diary.html" },
     { "text": "ProPra", "link": "pyren.html" }
 ]
