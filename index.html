@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Cafe</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="header.js" defer></script>  <!-- ヘッダーを動的に読み込む -->
-    <!-- ヘッダーは `header.js` で動的に読み込まれるので、直接書かない -->
-</head>
-<body>
-
-    <!-- ヘッダーは `header.js` が動的に追加する -->
-
-    <!-- メインコンテンツ -->
-    <main>
-        <img src="https://raw.githubusercontent.com/Liqrase/cafe/refs/heads/main/images/p1_indexmain.jpg" alt="Index Image" width="1792" height="724" class="index-img" 
-            srcset="https://raw.githubusercontent.com/Liqrase/cafe/refs/heads/main/images/p1_indexmain.jpg 1792w,
-            https://raw.githubusercontent.com/Liqrase/cafe/refs/heads/main/images/p1_indexmain.jpg-small 1000w"
-            sizes="(max-width: 1792px) 100vw, 1792px" decoding="async">
-        <p>このページはChatGPTに作ってもらいました！</p>
-        <p>This is a simple homepage for my cafe. Stay tuned for more!</p>
-    </main>
-
-    <script src="footer.js" defer></script>
-</body>
-</html>
+---
+layout: home
+author_profile: true
+---
