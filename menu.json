@@ -1,4 +1,4 @@
 [
-    { "text": "Diary", "link": "/diary/index.html" },
-    { "text": "ProPra", "link": "pyren.html" }
+    { "text": "Diary", "link": "/diary" },
+    { "text": "ProPra", "link": "https://liqrase.github.io/diary-1/" }
 ]
