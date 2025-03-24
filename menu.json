@@ -1,5 +1,6 @@
 [
-    { "text": "日記", "link": "diary" },
+    { "text": "ﾌﾟﾛﾌｨｰﾙ", "link": "diary" },
+    { "text": "日記", "link": "https://liqrase.github.io/diary-3/" },
     { "text": "ﾌﾟﾛｸﾞﾗﾑ雑記", "link": "https://liqrase.github.io/diary-1/" },
     { "text": "満員電車記録", "link": "https://liqrase.github.io/diary-2/" }
 ]
