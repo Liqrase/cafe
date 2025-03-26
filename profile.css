@@ -31,6 +31,10 @@ body {
   object-fit: cover;
 }
 
+.profile-img:hover {
+  content: url("images/ligreen.png");
+}
+
 .profile-name {
   font-weight: 300;
   font-size: 18px;
@@ -75,6 +79,14 @@ body {
     padding-right: 0;
     border-right: none;
     margin-bottom: 20px;
+    flex: none; /* ←追加 */
+    width: 100%; /* ←追加 */
+  }
+
+  .profile-right {
+    flex: none; /* ←ここも追加 */
+    padding-left: 0;
+    width: 100%; /* ←追加で自然に縦並びに */
   }
 
   .profile-img {
@@ -84,11 +96,6 @@ body {
 
   .profile-name {
     font-size: 16px;
-  }
-
-  .profile-right {
-    flex: none;
-    padding-left: 0;
   }
 
   .profile-right h4 {
